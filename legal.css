@@ -1,0 +1,44 @@
+.legal-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.legal-page .site-header {
+  position: relative;
+}
+
+.legal-main {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 72px 0 120px;
+}
+
+.legal-card {
+  width: min(680px, 100%);
+  padding: clamp(32px, 6vw, 64px);
+  background: linear-gradient(145deg, rgba(13, 26, 45, .92), rgba(8, 15, 29, .92));
+  border: 1px solid rgba(0, 217, 255, .2);
+  border-radius: 6px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .3);
+}
+
+.legal-card h1 {
+  margin: 18px 0 20px;
+  font: 600 clamp(42px, 7vw, 68px) / 1 var(--font-display);
+  letter-spacing: -.07em;
+}
+
+.legal-card p {
+  max-width: 480px;
+  margin: 0 0 28px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+@media (max-width: 640px) {
+  .legal-main {
+    padding: 40px 0 72px;
+  }
+}
