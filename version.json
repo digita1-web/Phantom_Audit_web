@@ -1,0 +1,6 @@
+{
+  "version": "0.1.0",
+  "url": "https://github.com/digita1-web/phantom-audit-releases/releases/latest/download/phantom-audit.apk",
+  "mandatory": false,
+  "min_supported_version": "0.1.0"
+}
