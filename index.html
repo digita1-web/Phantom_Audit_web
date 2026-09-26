@@ -5,12 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#050812">
   <meta name="description" content="PhantomAudit: auditoría WiFi y seguridad digital local para Android.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; frame-src 'none'; media-src 'none';">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=()">
   <title>PhantomAudit — Seguridad digital sin dejar huella</title>
   <link rel="icon" type="image/png" href="phantomaudit_web_brand_package/favicon-32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="command-center.css">
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -28,7 +33,7 @@
         <a href="#para-quien">Para quién</a>
         <a href="#precios">Precios</a>
         <a href="#faq">FAQ</a>
-        <a class="nav-cta" href="https://github.com/digita1-web/Phantom_Audit_web" target="_blank" rel="noreferrer">Ver en GitHub <span>↗</span></a>
+        <a class="nav-cta" href="https://github.com/digita1-web/Phantom_Audit_web" target="_blank" rel="noopener noreferrer">Ver en GitHub <span>↗</span></a>
       </div>
     </nav>
   </header>
@@ -40,8 +45,8 @@
         <h1>Tu red.<br><em>Tu privacidad.</em><br>Tu control.</h1>
         <p class="hero-lead">Auditoría WiFi y seguridad digital en tu bolsillo. Descubre vulnerabilidades, investiga amenazas y protege tu entorno sin enviar tus datos a ningún servidor.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="https://github.com/digita1-web/phantom-audit-releases/releases/latest" target="_blank" rel="noreferrer">Descargar APK <span>↓</span></a>
-          <a class="button button-ghost" href="https://github.com/digita1-web/Phantom_Audit_web" target="_blank" rel="noreferrer">Ver en GitHub <span>↗</span></a>
+          <a class="button button-primary" href="https://github.com/digita1-web/phantom-audit-releases/releases/latest" target="_blank" rel="noopener noreferrer">Descargar APK <span>↓</span></a>
+          <a class="button button-ghost" href="https://github.com/digita1-web/Phantom_Audit_web" target="_blank" rel="noopener noreferrer">Ver en GitHub <span>↗</span></a>
         </div>
         <div class="hero-meta"><span>◉</span> Android · Próximamente en iOS <span class="meta-separator">|</span> <span>◈</span> Sin servidor · 100% local</div>
       </div>
@@ -65,6 +70,25 @@
 
     <section class="ticker"><div class="ticker-inner"><span>WIFI AUDIT</span><i>✦</i><span>OSINT</span><i>✦</i><span>PRIVACY FIRST</span><i>✦</i><span>NO SERVER</span><i>✦</i><span>WIFI AUDIT</span><i>✦</i><span>OSINT</span><i>✦</i><span>PRIVACY FIRST</span><i>✦</i><span>NO SERVER</span><i>✦</i></div></section>
 
+    <section class="command-section" id="control-center">
+      <div class="container command-layout">
+        <div class="command-copy reveal">
+          <div class="eyebrow">LIVE / LOCAL INTELLIGENCE</div>
+          <h2>Lee tu entorno.<br><em>Sin pedir permiso.</em></h2>
+          <p>Un centro de control pensado para tomar decisiones rápidas: señal, dispositivos, amenazas y privacidad en una sola lectura.</p>
+          <button class="ghost-toggle" type="button" id="ghost-toggle" aria-pressed="false"><span class="toggle-dot"></span><span class="toggle-label">Activar Ghost Mode</span><b>↗</b></button>
+          <p class="toggle-note" id="ghost-note" aria-live="polite">Tu identidad permanece visible mientras el modo está inactivo.</p>
+        </div>
+        <div class="command-panel reveal reveal-delay" aria-label="Panel de control de auditoría PhantomAudit">
+          <div class="panel-header"><div><span class="panel-kicker">PHANTOMAUDIT / LOCAL CORE</span><strong>Centro de control</strong></div><span class="live-indicator"><i></i> LIVE</span></div>
+          <div class="panel-network"><div class="network-icon">⌁</div><div><span>RED ACTIVA</span><strong>Casa_5G</strong><small>WPA3 · 5 GHz · -42 dBm</small></div><b class="network-safe">SEGURA</b></div>
+          <div class="panel-stats"><div><span>DISPOSITIVOS</span><strong>14</strong><small>+2 esta semana</small></div><div><span>RIESGOS ABIERTOS</span><strong class="warning-number">02</strong><small>Requieren atención</small></div><div><span>HUELLA DIGITAL</span><strong class="cyan-number">12%</strong><small>−24% con Ghost Mode</small></div></div>
+          <div class="panel-timeline"><span>EVENTOS RECIENTES</span><div class="timeline-row"><i class="timeline-dot safe-dot"></i><div><b>Nuevo dispositivo autorizado</b><small>iPhone de Laura · hace 4 min</small></div><em>✓</em></div><div class="timeline-row"><i class="timeline-dot warning-dot"></i><div><b>Beacon BLE detectado</b><small>Señal desconocida · hace 18 min</small></div><em>!</em></div><div class="timeline-row"><i class="timeline-dot blue-dot"></i><div><b>Auditoría local completada</b><small>Sin datos enviados · hace 31 min</small></div><em>↗</em></div></div>
+          <div class="panel-footer"><span><i></i> DATOS PROCESADOS EN EL DISPOSITIVO</span><span>última sincronización: nunca</span></div>
+        </div>
+      </div>
+    </section>
+
     <section class="section container" id="funciones">
       <div class="section-heading reveal"><div><div class="eyebrow">01 / CAPACIDADES</div><h2>Todo lo que necesitas.<br><em>En un solo lugar.</em></h2></div><p>De la protección cotidiana a la investigación profesional. PhantomAudit convierte tu Android en un centro de inteligencia digital, sin intermediarios.</p></div>
       <div class="feature-grid">
@@ -82,12 +106,12 @@
 
     <section class="section pricing-section container" id="precios"><div class="section-heading reveal"><div><div class="eyebrow">03 / ELIGE TU NIVEL</div><h2>Empieza gratis.<br><em>Crece cuando quieras.</em></h2></div><div class="billing-toggle"><button class="active" data-billing="monthly">Mensual</button><button data-billing="yearly">Anual <small>-20%</small></button></div></div><div class="pricing-grid"><article class="price-card reveal"><span class="plan-name">FREE</span><h3>$0</h3><p>Para empezar a ver lo que ocurre.</p><a href="https://github.com/digita1-web/phantom-audit-releases/releases/latest" class="price-link">Descargar <span>↗</span></a><ul><li>Escaneo WiFi básico</li><li>Dispositivos conectados</li><li>Alertas esenciales</li></ul></article><article class="price-card reveal"><span class="plan-name">HOME</span><h3><span class="price-month">$4.99</span><small>/ mes</small></h3><p>Tu hogar, bajo control.</p><a href="#contacto" class="price-link">Suscribirse <span>↗</span></a><ul><li>Todo en Free</li><li>Historial y alertas avanzadas</li><li>Ghost Mode</li></ul></article><article class="price-card price-featured reveal"><span class="popular">MÁS ELEGIDO</span><span class="plan-name">PRO</span><h3><span class="price-month">$14.99</span><small>/ mes</small></h3><p>Inteligencia para investigar.</p><a href="#contacto" class="price-link">Suscribirse <span>↗</span></a><ul><li>Todo en Home</li><li>OSINT + Copiloto IA</li><li>Informes profesionales</li></ul></article><article class="price-card reveal"><span class="plan-name">BUSINESS</span><h3><span class="price-month">$49.99</span><small>/ mes</small></h3><p>Más visibilidad para tu equipo.</p><a href="#contacto" class="price-link">Contactar <span>↗</span></a><ul><li>Todo en Pro</li><li>Multi-dispositivo</li><li>Acceso API</li></ul></article><article class="price-card reveal"><span class="plan-name">ENTERPRISE</span><h3><span class="price-month">$199</span><small>/ mes</small></h3><p>Seguridad sin límites.</p><a href="#contacto" class="price-link">Contactar <span>↗</span></a><ul><li>Todo en Business</li><li>Despliegue personalizado</li><li>Soporte prioritario</li></ul></article></div></section>
 
-    <section class="faq-section" id="faq"><div class="container faq-layout"><div class="faq-intro reveal"><div class="eyebrow">04 / PREGUNTAS</div><h2>Lo esencial,<br><em>sin rodeos.</em></h2><p>¿Tienes otra pregunta? <a href="https://github.com/digita1-web/Phantom_Audit_web/issues" target="_blank" rel="noreferrer">Abre un issue ↗</a></p></div><div class="faq-list reveal"><details open><summary>¿Necesito un ESP32?<span>+</span></summary><p>No. PhantomAudit funciona de forma independiente para la mayoría de sus funciones. Solo necesitas un ESP32-WROOM-32 para realizar auditorías WiFi activas como Evil Twin.</p></details><details><summary>¿Es legal usar PhantomAudit?<span>+</span></summary><p>Sí, siempre que audites redes y dispositivos propios o tengas autorización expresa. Úsala de forma responsable y respeta la legislación local.</p></details><details><summary>¿Cómo se actualiza?<span>+</span></summary><p>La app comprueba automáticamente la versión más reciente publicada en GitHub Releases y te avisa cuando hay una actualización disponible.</p></details><details><summary>¿Funciona sin internet?<span>+</span></summary><p>Sí. La mayoría de las funciones de auditoría y privacidad funcionan localmente, sin enviar tus datos a un servidor.</p></details><details><summary>¿Hay versión para iOS?<span>+</span></summary><p>Está en nuestro roadmap. La versión Android es la primera disponible y estamos trabajando para llevar PhantomAudit a iOS.</p></details></div></div></section>
+    <section class="faq-section" id="faq"><div class="container faq-layout"><div class="faq-intro reveal"><div class="eyebrow">04 / PREGUNTAS</div><h2>Lo esencial,<br><em>sin rodeos.</em></h2><p>¿Tienes otra pregunta? <a href="https://github.com/digita1-web/Phantom_Audit_web/issues" target="_blank" rel="noopener noreferrer">Abre un issue ↗</a></p></div><div class="faq-list reveal"><details open><summary>¿Necesito un ESP32?<span>+</span></summary><p>No. PhantomAudit funciona de forma independiente para la mayoría de sus funciones. Solo necesitas un ESP32-WROOM-32 para realizar auditorías WiFi activas como Evil Twin.</p></details><details><summary>¿Es legal usar PhantomAudit?<span>+</span></summary><p>Sí, siempre que audites redes y dispositivos propios o tengas autorización expresa. Úsala de forma responsable y respeta la legislación local.</p></details><details><summary>¿Cómo se actualiza?<span>+</span></summary><p>La app comprueba automáticamente la versión más reciente publicada en GitHub Releases y te avisa cuando hay una actualización disponible.</p></details><details><summary>¿Funciona sin internet?<span>+</span></summary><p>Sí. La mayoría de las funciones de auditoría y privacidad funcionan localmente, sin enviar tus datos a un servidor.</p></details><details><summary>¿Hay versión para iOS?<span>+</span></summary><p>Está en nuestro roadmap. La versión Android es la primera disponible y estamos trabajando para llevar PhantomAudit a iOS.</p></details></div></div></section>
 
-    <section class="final-cta container" id="contacto"><div class="cta-glow"></div><div class="eyebrow">TU SIGUIENTE PASO</div><h2>Ve más allá<br>de la superficie.</h2><p>La seguridad no debería ser una caja negra. Empieza a ver, entender y proteger lo que es tuyo.</p><div class="hero-actions"><a class="button button-primary" href="https://github.com/digita1-web/phantom-audit-releases/releases/latest" target="_blank" rel="noreferrer">Descargar APK <span>↓</span></a><a class="button button-ghost" href="https://github.com/digita1-web/Phantom_Audit_web/issues" target="_blank" rel="noreferrer">Hablar con nosotros <span>↗</span></a></div></section>
+    <section class="final-cta container" id="contacto"><div class="cta-glow"></div><div class="eyebrow">TU SIGUIENTE PASO</div><h2>Ve más allá<br>de la superficie.</h2><p>La seguridad no debería ser una caja negra. Empieza a ver, entender y proteger lo que es tuyo.</p><div class="hero-actions"><a class="button button-primary" href="https://github.com/digita1-web/phantom-audit-releases/releases/latest" target="_blank" rel="noopener noreferrer">Descargar APK <span>↓</span></a><a class="button button-ghost" href="https://github.com/digita1-web/Phantom_Audit_web/issues" target="_blank" rel="noopener noreferrer">Hablar con nosotros <span>↗</span></a></div></section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-main"><a class="brand" href="#inicio"><img src="phantomaudit_web_brand_package/phantomaudit-icon-transparent.png" alt="" width="42" height="42"><span>PHANTOM<span>AUDIT</span></span></a><div class="footer-links"><a href="https://github.com/digita1-web/Phantom_Audit_web" target="_blank" rel="noreferrer">GitHub</a><a href="https://github.com/digita1-web/Phantom_Audit_web/issues" target="_blank" rel="noreferrer">Issues</a><a href="#">Changelog</a><a href="#">Términos</a><a href="#">Privacidad</a></div></div><div class="container footer-bottom"><span>© 2026 Digital Web. Todos los derechos reservados.</span><span>Licencia propietaria <i>·</i> Hecho para proteger</span></div></footer>
+  <footer class="site-footer"><div class="container footer-main"><a class="brand" href="#inicio"><img src="phantomaudit_web_brand_package/phantomaudit-icon-transparent.png" alt="" width="42" height="42"><span>PHANTOM<span>AUDIT</span></span></a><div class="footer-links"><a href="https://github.com/digita1-web/Phantom_Audit_web" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://github.com/digita1-web/Phantom_Audit_web/issues" target="_blank" rel="noopener noreferrer">Issues</a><a href="#">Changelog</a><a href="#">Términos</a><a href="#">Privacidad</a></div></div><div class="container footer-bottom"><span>© 2026 Digital Web. Todos los derechos reservados.</span><span>Licencia propietaria <i>·</i> Hecho para proteger</span></div></footer>
   <script src="script.js"></script>
 </body>
 </html>

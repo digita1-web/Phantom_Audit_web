@@ -42,6 +42,18 @@ document.querySelectorAll('[data-billing]').forEach((button) => {
     });
   });
 });
+const ghostToggle = document.querySelector('#ghost-toggle');
+const ghostNote = document.querySelector('#ghost-note');
+
+ghostToggle?.addEventListener('click', () => {
+  const active = ghostToggle.getAttribute('aria-pressed') === 'true';
+  ghostToggle.setAttribute('aria-pressed', String(!active));
+  ghostToggle.classList.toggle('active', !active);
+  ghostToggle.querySelector('.toggle-label').textContent = active ? 'Activar Ghost Mode' : 'Ghost Mode activo';
+  ghostNote.textContent = active
+    ? 'Tu identidad permanece visible mientras el modo está inactivo.'
+    : 'MAC aleatoria y huella reducida. El modo es solo una simulación visual.';
+});
 
 document.querySelectorAll('a[href="#"]').forEach((link) => {
   link.addEventListener('click', (event) => event.preventDefault());
